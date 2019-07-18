@@ -29,7 +29,9 @@
       <div class="profile">
         <section class="profile-masthead" id="masthead">
           <header class="profile-logo">
-            
+	    <div class="profile-logo-image">
+              <img alt="Ester Pantaleo" src="/repo_images/ester.png" />
+	    </div>
             <div class="profile-name">
               <h1>Ester Pantaleo</h1>
             </div>
@@ -43,7 +45,7 @@
 
         <section class="profile-content" id="content">
 
-          <div class="profile-description">
+          <div class="profile-description" style="font-size:0.6em;">
             <p>I'm a freelance technical-scientific consultant and I hold a PhD in Physics from the University of Bari, Italy. During my career I have done research in interdisciplinary fields like Genomics, Econometrics, Natural Language Processing, Image Analysis. I am also very much interested in the communication of technical and scientific content through writing and/or interactive visualizations.</p> 
 	    <br>
 	    <p>In this website I'm collecting some projects I have developed as a researcher or as a freelancer. Currently I'm developing <a href="http://www.epantaleo.com/etytree.html" target="_blank">etytree</a> an interactive tool for the visualization of the etymology of words with an associated RDF database, funded by an IEG grant of the Wikimedia Foundation. Also I am doing image analysis for the international organization <a href="" target="_blank">CIHEAM IAMB - Mediterranean Agronomic Institute of Bari</a>. If you have comments on my work please do not hesitate to contact me at esterpantaleo at gmail dot com.
@@ -238,7 +240,7 @@
 		      </span>
 		      <br>
                       <div class="description menu-item-description">
-			A Bayesian method for simultaneous transcript reconstruction and abundance estimation with RNA-Seq data from multiple samples. Developed at the University of Chicago.
+			<u>al</u>ternative <u>tra</u>nscripts estimation: a Bayesian method for simultaneous transcript reconstruction and abundance estimation with RNA-Seq data from multiple samples. Developed at the University of Chicago. 
 			<br>
 			<br>
 			<p class="tech-p">
@@ -250,9 +252,6 @@
 			<br>
                         <img src="/repo_images/logo-university-of-chicago.png" height="10%" width="46%" />
 		      </div>
-                    </div>
-                    <div class="menu-item-image has-meta-content">
-                      <img src="/repo_images/altra.png" />
                     </div>
                   </li>
 		  <li class="menu-item">
@@ -300,9 +299,6 @@
 			<br>
                         <img src="/repo_images/logo-university-of-cambridge.png" height="13%" width="43%" />
                     </div>
-                    <div class="menu-item-image has-meta-content">
-                      <img src="/repo_images/fat-tails.png" />
-                    </div>
                   </li>
 		  <li class="menu-item">
                     <div class="menu-item-info">
@@ -323,10 +319,8 @@
 			  </span>
 			</p>
 			<br>
-                        <img src="/repo_images/logo-universita-di-palermo.png" height="15%" width="15%" />		      </div>
-                    </div>
-                    <div class="menu-item-image has-meta-content">
-                      <img src="/repo_images/covariance.png" />
+                        <img src="/repo_images/logo-universita-di-palermo.png" height="15%" width="15%" />
+		      </div>
                     </div>
                   </li>
 		   <li class="menu-item">
@@ -338,7 +332,7 @@
 		      </span>
 		      <br>
                       <div class="description menu-item-description">
-			Development of a new clustering algorithm based on the Hausdorff distance, also applied to financial time series.
+			Joint work on the development of a new clustering algorithm based on the Hausdorff distance, also applied to financial time series.
 			<br>
 			<br>
 			<p class="tech-p">
@@ -351,14 +345,49 @@
                         <img src="/repo_images/logo-universita-di-bari.png" height="19%" width="23%" />
 		      </div>
                     </div>
-                    <div class="menu-item-image has-meta-content">
-                      <img src="/repo_images/hausdorff.png" />
-                    </div>
                   </li>
               </div>
 	      
           </article>
-	</section>
+	  
+	  <section class="profile-modules" id="modules">
+            <ul class='twitter-columns'>
+              <li class="profile-module module-twitter">
+                <h2 class="module-name">Tweets</h2>
+		<a class="twitter-timeline" data-height="700" href="https://twitter.com/missipiaciut?ref_src=twsrc%5Etfw">Tweets by missipiaciut</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="profile-module">
+                <h2 class="module-name">Blog posts</h2>
+                <ul class="module-list">
+                  <li>
+		    <h3 class="module-name" style="font-size:13px">etyree, an interactive and multilingual etymology dictionary</h2>
+		    <div style="font-size:10px"><br>
+		    Etytree has been so far my favorite project. I was coming back from the States after more than 5 years and I had some time to think of
+ new projects. I had always wanted to have a tool to search for the etymology of a word in a specific (but any) language and display its etymological tree, i.e., the tree with its ancestors and cognate words, and how they are related. No such tool was available so I thought it would be very cool if I did it myself, since I had time.
+		    <br>
+            I looked for data. The simplest source, I thought, is Wiktionary, which has dictionaries in multiple languages. However only the English Wiktionary was ready to be used as an automatic source of data, as it was one of the few with standardized Etymology sections. Nonetheless, the English Wiktionary is a dictionary of words in any language, in principle, with definitions in English. Also I saw that a few researchers had already developed tools to extract data from Wiktionary, including, among others who where less responsive, DBpedia and Gilles Sérasset from the University of Grenoble Alpes. The DBpedia project, although outstanding, wasn't maintaining the Wiktionary extraction tool. Prof. Sérasset, instead, showed great interest in the project and in a possible collaboration. I decided to collaborate with him.
+		    <br>
+            The next step was looking for fundings. I contacted many different institutions and universities and then I found the individual engagement grant of the Wikimedia Foundations, whose purpose was to fund projects developed by individuals. I wrote a long and detailed grant, applied and went through a few interviews plus a relatively long process of community review. The people I encountered were enthusistic about the project and I got the funding!
+		    <br>
+            The original idea is shown <a href="https://esterpantaleo.github.io/etymology/demo/resources/html/" target="_blank">here</a>, where you can explore the proof of concept of the tool. The idea was to use hierarchical trees of etymological connections between words, and visualize on one page all cognates and how they are related in different languages. I discovered how parseley and celery come from the same ancestor, and how pistachio is spelt differently in a number of languages. And how tear in English and lacrima (tear in Italian) are etymologically related, how the word apricot took form and I could even find how some words in my dialect (Barese/Tarantino) are derived from Persian or French.
+		    <br>
+            I was able to create a database of etymological relationships, an RDF database, building on prof.  G Sérasset extraction tool and adapting it to also extract Etymology sections using complicated regular expressions. One difficulty I faced was "homographs", words that are spelt the same but have different meanings. Obviously such words have different ancestors, thus representing two different nodes in the database. HOwever it often happems that, when they are mentioned in Etymology sections by users, these words are not differentiated. So when parsing Etymology sections I was left with ambiguity: if the Etymology section reads "wordA derives from wordB" and wordB is not unique but has a homograph, which wordB does wordA derive from? While I could have uses semantics to brake this ambiguity (and not always), this would have complicated things much, so I decided to not face the problem for the moment, given that the number of homographs is relatively small.
+		    <br>
+            Once I had built a database, I started working on the visualization. I realized how trees were not really trees but graphs, and complex geometries were showing, because of typos, extraction errors, homograpy, inconsistency between Etymology sections of different words etymologically connected. At the same time, I was fascinated by the graphs I could build and by the many connections I would discover between words. Also I could discover new words, in other languages, that sounded similar to words I knew and that had a common ancestor. Fascinating.
+		    <br>
+            For all these reasons I switched from a hierarchical representation, to a graph view, which complicated things because there isn't a way to easily plot directed graphs to read the graph from left to right following the direction of the arrows. Also etytree graphs are very big (think of the tree for the English word man, and how many descendants the word man has). Incorrect links also cause graphs that are in principle separated to be connected which aggravates the problem. I released a version in which a user can visualize the graph of ancestors of a word in any language (if it is available in the database) and also click on any word in this graph and see the list of all available descendants of that word, grouped by language.
+		    <br>
+		    Right now I'm trying to improve the visualization. I'm trying to use d3.js force field graph, and a force that is parallel to the y axes to align it to a time scale. I'll keep you posted on what happens.
+		    </div>
+		  </li>
+                  <li class="module-social">
+                    <a href="https://twitter.com/missipiaciut" target="_blank"><i class="icon-twitter"></i></a>
+                    <a href="https://linkedin/esterpantaleo" target="_blank"><i class="icon-linkedin"></i></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
       </div>
     </div>
   </body>
