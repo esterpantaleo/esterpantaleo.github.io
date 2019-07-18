@@ -8,6 +8,8 @@
   </head>
   <style>
 
+  #more {display: none;}
+
   .tech-p {
     line-height:1.1em;
     font-size:10px; 
@@ -23,7 +25,7 @@
   }
 
   </style>
-
+  <script src="scripts.js"></script>
   <body>
     <div class="wrapper">
       <div class="profile">
@@ -75,7 +77,7 @@
 			<a href="http://github.com/esterpantaleo/etymology" target="_blank">Github</a> &middot;
 			<a href="https://bitbucket.org/esterpantaleo/dbnary_etymology/" target="_blank">Bitbucket</a> &middot;
 			<a href="https://meta.wikimedia.org/wiki/Grants:IEG/A_graphical_and_interactive_etymology_dictionary_based_on_Wiktionary" target="_blank">grant</a> &middot; 
-			<a href="https://esterpantaleo.github.io/etymology/demo/resources/html/" target="_blank">demo</a>
+			<a href="https://esterpantaleo.github.io/etytree-demo/" target="_blank">demo</a>
 		      </span>
                       <div class="description menu-item-description">
 			An interactive tool to visualize etymologies and find etymologically connected words + an RDF database of etymological connections extracted from the English Wiktionary. Developed with a Wikimedia Foundation individual engagement grant.
@@ -182,7 +184,7 @@
 		      </span>
 		      <br>
                       <div class="description menu-item-description">
-			An interactive dashboard to explore and compare different neighborhoods in major Italian cities using data from ISTAT and other public sources. Currently under development for the Digital Team of the Italian Government.
+			An interactive dashboard to explore and compare different neighborhoods in major Italian cities using data from ISTAT and other public sources. Designed to work on desktop. Currently under development for the Digital Team of the Italian Government.
 			<br>
 			<br>
 			<p class="tech-p">
@@ -264,8 +266,7 @@
                       <div class="description menu-item-description">
 			Development of an R package for multiscale analysis, ongoing work in the Stephens lab at the University of Chicago. The embedded model considers data as an inhomogeneous Poisson process and tests for differences in underlying intensities using a Bayesian multi-scale model. 
 			<br>
-			<br>
-			<p class="tech-p">
+			<br>		<p class="tech-p">
 			  <span class="menu-item-price-range" style="color:blue;">
 			    <span style="color:black">TECHNICAL CONTENT:   </span>
 			    genomics &middot; Bayesian statistics &middot; data modeling  &middot; R  </span>
@@ -360,16 +361,16 @@
                 <h2 class="module-name">Blog posts</h2>
                 <ul class="module-list">
                   <li>
-		    <h3 class="module-name" style="font-size:13px">etyree, an interactive and multilingual etymology dictionary</h2>
+		    <h3 class="module-name" style="font-size:13px">etytree, an interactive and multilingual etymology dictionary</h2>
 		    <div style="font-size:10px"><br>
-		    Etytree has been so far my favorite project. I was coming back from the States after more than 5 years and I had some time to think of
- new projects. I had always wanted to have a tool to search for the etymology of a word in a specific (but any) language and display its etymological tree, i.e., the tree with its ancestors and cognate words, and how they are related. No such tool was available so I thought it would be very cool if I did it myself, since I had time.
+		    Etytree has been so far my favorite project. I was coming back from the States after more than 4 years and I had some time to think of
+ new projects. I had always wanted to have a tool to search for the etymology of a word in a specific (but any) language and display its etymological tree, i.e., the tree with its ancestors and cognate words, and how they are related. No such tool was available so I thought <span id="dots">...</span> <span id="more">it would be very cool if I did it myself, since I had time.
 		    <br>
             I looked for data. The simplest source, I thought, is Wiktionary, which has dictionaries in multiple languages. However only the English Wiktionary was ready to be used as an automatic source of data, as it was one of the few with standardized Etymology sections. Nonetheless, the English Wiktionary is a dictionary of words in any language, in principle, with definitions in English. Also I saw that a few researchers had already developed tools to extract data from Wiktionary, including, among others who where less responsive, DBpedia and Gilles Sérasset from the University of Grenoble Alpes. The DBpedia project, although outstanding, wasn't maintaining the Wiktionary extraction tool. Prof. Sérasset, instead, showed great interest in the project and in a possible collaboration. I decided to collaborate with him.
 		    <br>
             The next step was looking for fundings. I contacted many different institutions and universities and then I found the individual engagement grant of the Wikimedia Foundations, whose purpose was to fund projects developed by individuals. I wrote a long and detailed grant, applied and went through a few interviews plus a relatively long process of community review. The people I encountered were enthusistic about the project and I got the funding!
 		    <br>
-            The original idea is shown <a href="https://esterpantaleo.github.io/etymology/demo/resources/html/" target="_blank">here</a>, where you can explore the proof of concept of the tool. The idea was to use hierarchical trees of etymological connections between words, and visualize on one page all cognates and how they are related in different languages. I discovered how parseley and celery come from the same ancestor, and how pistachio is spelt differently in a number of languages. And how tear in English and lacrima (tear in Italian) are etymologically related, how the word apricot took form and I could even find how some words in my dialect (Barese/Tarantino) are derived from Persian or French.
+            The original idea is shown <a href="https://esterpantaleo.github.io/etytree-demo/" target="_blank">here</a>, where you can explore the proof of concept of the tool. The idea was to use hierarchical trees of etymological connections between words, and visualize on one page all cognates and how they are related in different languages. I discovered how parseley and celery come from the same ancestor, and how pistachio is spelt differently in a number of languages. And how tear in English and lacrima (tear in Italian) are etymologically related, how the word apricot took form and I could even find how some words in my dialect (Barese/Tarantino) are derived from Persian or French.
 		    <br>
             I was able to create a database of etymological relationships, an RDF database, building on prof.  G Sérasset extraction tool and adapting it to also extract Etymology sections using complicated regular expressions. One difficulty I faced was "homographs", words that are spelt the same but have different meanings. Obviously such words have different ancestors, thus representing two different nodes in the database. HOwever it often happems that, when they are mentioned in Etymology sections by users, these words are not differentiated. So when parsing Etymology sections I was left with ambiguity: if the Etymology section reads "wordA derives from wordB" and wordB is not unique but has a homograph, which wordB does wordA derive from? While I could have uses semantics to brake this ambiguity (and not always), this would have complicated things much, so I decided to not face the problem for the moment, given that the number of homographs is relatively small.
 		    <br>
@@ -377,7 +378,8 @@
 		    <br>
             For all these reasons I switched from a hierarchical representation, to a graph view, which complicated things because there isn't a way to easily plot directed graphs to read the graph from left to right following the direction of the arrows. Also etytree graphs are very big (think of the tree for the English word man, and how many descendants the word man has). Incorrect links also cause graphs that are in principle separated to be connected which aggravates the problem. I released a version in which a user can visualize the graph of ancestors of a word in any language (if it is available in the database) and also click on any word in this graph and see the list of all available descendants of that word, grouped by language.
 		    <br>
-		    Right now I'm trying to improve the visualization. I'm trying to use d3.js force field graph, and a force that is parallel to the y axes to align it to a time scale. I'll keep you posted on what happens.
+		    Right now I'm trying to improve the visualization. I'm trying to use d3.js force field graph, and a force that is parallel to the y axes to align it to a time scale. I'll keep you posted on what happens.</span>
+		      <button onclick="myFunction()" id="myBtn">Read more</button>
 		    </div>
 		  </li>
                   <li class="module-social">
